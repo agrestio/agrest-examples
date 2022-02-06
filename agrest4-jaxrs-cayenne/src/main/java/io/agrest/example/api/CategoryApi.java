@@ -1,9 +1,9 @@
-package org.example.agrest.api;
+package io.agrest.example.api;
 
 import io.agrest.Ag;
 import io.agrest.DataResponse;
 import io.agrest.SimpleResponse;
-import org.example.agrest.persistent.Category;
+import io.agrest.example.persistent.Category;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;

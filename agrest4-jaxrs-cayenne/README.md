@@ -1,6 +1,6 @@
 # agrest-jaxrs-cayenne
 
-Using [Agrest](https://agrest.io) with Agrest with JAX-RS API, Apache Cayenne backend and Apache Derby DB.
+Using [Agrest 4.x](https://agrest.io) with Agrest with JAX-RS API, Apache Cayenne backend and Apache Derby DB.
 
 ## Prerequisites:
 

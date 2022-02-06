@@ -1,4 +1,4 @@
-package org.example.agrest;
+package io.agrest.example;
 
 import io.agrest.cayenne.AgCayenneBuilder;
 import io.agrest.cayenne.AgCayenneModule;
@@ -21,6 +21,6 @@ public class Application extends ResourceConfig {
         AgRuntime agRuntime = new AgBuilder().module(cayenneExt).build();
 
         register(agRuntime);
-        packages("org.example.agrest.api");
+        packages("io.agrest.example.api");
     }
 }
