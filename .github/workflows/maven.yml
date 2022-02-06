@@ -28,8 +28,8 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-build-v1
           restore-keys: ${{ runner.os }}-maven
 
-      - name: agresy4-jaxrs-cayenne
-        run: cd agresy4-jaxrs-cayenne/ && mvn clean verify
+      - name: agrest4-jaxrs-cayenne
+        run: cd agrest4-jaxrs-cayenne/ && mvn clean verify
 
-      - name: agresy5-jaxrs-cayenne
-        run: cd agresy5-jaxrs-cayenne/ && mvn clean verify
+      - name: agrest5-jaxrs-cayenne
+        run: cd agrest5-jaxrs-cayenne/ && mvn clean verify
