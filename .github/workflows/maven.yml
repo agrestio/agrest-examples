@@ -1,0 +1,35 @@
+name: 'build test'
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: JDK ${{ matrix.java }}
+    strategy:
+      matrix:
+        java: [ "17" ]
+
+    steps:
+      - name: Checkout...
+        uses: actions/checkout@v2
+
+      - name: Set up JDK...
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+
+      - name: Retrieve mvn repo cache...
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-build-v1
+          restore-keys: ${{ runner.os }}-maven
+
+      - name: agresy4-jaxrs-cayenne
+        run: cd agresy4-jaxrs-cayenne/ && mvn clean verify
+
+      - name: agresy5-jaxrs-cayenne
+        run: cd agresy5-jaxrs-cayenne/ && mvn clean verify
