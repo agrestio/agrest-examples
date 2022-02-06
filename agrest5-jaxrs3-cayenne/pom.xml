@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.agrest.example</groupId>
-    <artifactId>agrest5-jaxrs-cayenne</artifactId>
+    <artifactId>agrest5-jaxrs3-cayenne</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <agrest.version>5.0-SNAPSHOT</agrest.version>
-        <jersey.version>2.35</jersey.version>
+        <jersey.version>3.0.3</jersey.version>
     </properties>
     
      <repositories>
@@ -75,7 +75,7 @@
         <!-- Need dependencies for agrest-jaxrs and agrest-cayenne -->
         <dependency>
             <groupId>io.agrest</groupId>
-            <artifactId>agrest-jaxrs</artifactId>
+            <artifactId>agrest-jaxrs3</artifactId>
         </dependency>
         <dependency>
             <groupId>io.agrest</groupId>
@@ -114,7 +114,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>10.0.7</version>
+                <version>11.0.7</version>
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <classesDirectory>${project.basedir}/target/classes</classesDirectory>

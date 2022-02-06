@@ -2,12 +2,12 @@ package io.agrest.example;
 
 import io.agrest.cayenne.AgCayenneBuilder;
 import io.agrest.cayenne.AgCayenneModule;
-import io.agrest.jaxrs.AgJaxrsFeature;
+import io.agrest.jaxrs3.AgJaxrsFeature;
 import io.agrest.runtime.AgRuntime;
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import javax.ws.rs.ApplicationPath;
+import jakarta.ws.rs.ApplicationPath;
 
 @ApplicationPath("/api/*")
 public class Application extends ResourceConfig {
