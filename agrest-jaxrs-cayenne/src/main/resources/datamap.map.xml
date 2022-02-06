@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/10/modelMap"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://cayenne.apache.org/schema/10/modelMap https://cayenne.apache.org/schema/10/modelMap.xsd"
+	 project-version="10">
+	<property name="defaultPackage" value="org.example.agrest.persistent"/>
+	<db-entity name="BOOK">
+		<db-attribute name="AUTHOR" type="VARCHAR" length="128"/>
+		<db-attribute name="CATEGORY_ID" type="INTEGER"/>
+		<db-attribute name="ID" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="TITLE" type="VARCHAR" isMandatory="true" length="128"/>
+	</db-entity>
+	<db-entity name="CATEGORY">
+		<db-attribute name="DESCRIPTION" type="NCLOB"/>
+		<db-attribute name="ID" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="NAME" type="VARCHAR" isMandatory="true" length="128"/>
+	</db-entity>
+	<obj-entity name="Book" className="org.example.agrest.persistent.Book" dbEntityName="BOOK">
+		<obj-attribute name="author" type="java.lang.String" db-attribute-path="AUTHOR"/>
+		<obj-attribute name="title" type="java.lang.String" db-attribute-path="TITLE"/>
+	</obj-entity>
+	<obj-entity name="Category" className="org.example.agrest.persistent.Category" dbEntityName="CATEGORY">
+		<obj-attribute name="description" type="java.lang.String" db-attribute-path="DESCRIPTION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME"/>
+	</obj-entity>
+	<db-relationship name="category" source="BOOK" target="CATEGORY">
+		<db-attribute-pair source="CATEGORY_ID" target="ID"/>
+	</db-relationship>
+	<db-relationship name="books" source="CATEGORY" target="BOOK" toMany="true">
+		<db-attribute-pair source="ID" target="CATEGORY_ID"/>
+	</db-relationship>
+	<obj-relationship name="category" source="Book" target="Category" deleteRule="Nullify" db-relationship-path="category"/>
+	<obj-relationship name="books" source="Category" target="Book" deleteRule="Deny" db-relationship-path="books"/>
+</data-map>
