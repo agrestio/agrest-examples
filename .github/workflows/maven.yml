@@ -31,5 +31,5 @@ jobs:
       - name: agrest4-jaxrs-cayenne
         run: cd agrest4-jaxrs-cayenne/ && mvn clean verify
 
-      - name: agrest5-jaxrs-cayenne
-        run: cd agrest5-jaxrs-cayenne/ && mvn clean verify
+      - name: agrest5-jaxrs3-cayenne
+        run: cd agrest5-jaxrs3-cayenne/ && mvn clean verify
