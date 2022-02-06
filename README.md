@@ -1,3 +1,5 @@
+[![build test](https://github.com/agrestio/agrest-examples/actions/workflows/maven.yml/badge.svg)](https://github.com/agrestio/agrest-examples/actions/workflows/maven.yml)
+
 # agrest-examples
 
 A collection of examples using [Agrest.io](https://agrest.io). Each example is a standalone runnable application that can built and started with Maven.
