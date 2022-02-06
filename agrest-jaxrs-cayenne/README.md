@@ -1,4 +1,4 @@
-# agrest-bookstore-example
+# agrest-jaxrs-cayenne
 
 Using [Agrest](https://agrest.io) with Agrest with JAX-RS API, Apache Cayenne backend and Apache Derby DB.
 
