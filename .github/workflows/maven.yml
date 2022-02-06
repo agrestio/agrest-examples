@@ -26,7 +26,6 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-build-v2
-          restore-keys: ${{ runner.os }}-maven
 
       - name: agrest4-jaxrs-cayenne
         run: cd agrest4-jaxrs-cayenne/ && mvn clean verify
